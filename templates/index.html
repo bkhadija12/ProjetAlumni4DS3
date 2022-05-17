@@ -1,0 +1,316 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+  <div class="content">
+
+    <div class="row">
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-body ">
+            <div class="row">
+              <div class="col-5 col-md-4">
+                <div class="icon-big text-center icon-warning">
+                  <i class="nc-icon nc-globe text-warning"></i>
+                </div>
+              </div>
+              <div class="col-7 col-md-8">
+                <div class="numbers">
+                  <p class="card-category">Network</p>
+                  <p class="card-title">150<p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer ">
+            <hr>
+            <div class="stats">
+              <i class="fa fa-refresh"></i>
+              Update Now
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-body ">
+            <div class="row">
+              <div class="col-5 col-md-4">
+                <div class="icon-big text-center icon-warning">
+                  <i class="nc-icon nc-money-coins text-success"></i>
+                </div>
+              </div>
+              <div class="col-7 col-md-8">
+                <div class="numbers">
+                  <p class="card-category">Avr Revenue</p>
+                  <p class="card-title">$ 3,345<p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer ">
+            <hr>
+            <div class="stats">
+              <i class="fa fa-calendar-o"></i>
+              In Total
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-body ">
+            <div class="row">
+              <div class="col-5 col-md-4">
+                <div class="icon-big text-center icon-warning">
+                  <i class="nc-icon nc-vector text-danger"></i>
+                </div>
+              </div>
+              <div class="col-7 col-md-8">
+                <div class="numbers">
+                  <p class="card-category">Campanies</p>
+                  <p class="card-title">230<p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer ">
+            <hr>
+            <div class="stats">
+              <i class="fa fa-clock-o"></i>
+              To this day
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-body ">
+            <div class="row">
+              <div class="col-5 col-md-4">
+                <div class="icon-big text-center icon-warning">
+                  <i class="nc-icon nc-app text-primary"></i>
+                </div>
+              </div>
+              <div class="col-7 col-md-8">
+                <div class="numbers">
+                  <p class="card-category">Skills</p>
+                  <p class="card-title">+800<p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer ">
+            <hr>
+            <div class="stats">
+              <i class="fa fa-refresh"></i>
+              Update now
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card ">
+          <div class="card-header ">
+            <h5 class="card-title">Programs</h5>
+            
+          </div>
+          <div class="card-body ">
+            <canvas id=chartHours width="400" height="100"></canvas>
+          </div>
+          <div class="card-footer ">
+            <hr>
+            <div class="stats">
+
+              <i class="fa fa-history"></i> Updated 3 minutes ago
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card ">
+          <div class="card-header ">
+            <h5 class="card-title">International students</h5>
+          </div>
+          <div class="card-body ">
+            <canvas id="chartNationality"></canvas>
+          </div>
+          <div class="card-footer ">
+            <div class="legend">
+              <i class="fa fa-circle text-primary"></i> Tunisia
+              <i class="fa fa-circle text-danger"></i> Cameroune
+              <i class="fa fa-circle text-gray"></i> Autre
+            </div>
+            <hr>
+            <div class="stats">
+              <i class="fa fa-calendar"></i> Nationlities at Esprit
+            </div>
+          </div>
+        </div>
+      </div>
+       <div class="col-md-4">
+        <div class="card ">
+          <div class="card-header ">
+            <h5 class="card-title">Students</h5>
+          </div>
+          <div class="card-body ">
+            <canvas id="chartGender"></canvas>
+          </div>
+          <div class="card-footer ">
+            <div class="legend">
+              <i class="fa fa-circle text-primary"></i> Male
+              <i class="fa fa-circle text-danger"></i> Female
+            </div>
+            <hr>
+            <div class="stats">
+              <i class="fa fa-calendar"></i> Gender
+            </div>
+          </div>
+        </div>
+      </div>
+       <div class="col-md-4">
+        <div class="card ">
+          <div class="card-header ">
+            <h5 class="card-title">Institution</h5>
+          </div>
+          <div class="card-body ">
+            <canvas id="chartInstitution"></canvas>
+          </div>
+          <div class="card-footer ">
+            <div class="legend">
+              <i class="fa fa-circle text-primary"></i> Esprit Engineering
+              <i class="fa fa-circle text-danger"></i> ESB
+            </div>
+            
+            <hr>
+            <div class="stats">
+              <i class="fa fa-calendar"></i> Institution
+            </div>
+          </div>
+        </div>
+      </div>
+      {% if gardian.has_rights(current_user,['ADMIN']) %}
+      <div class="col-md-12">
+        <div class="card card-chart">
+          <div class="card-header">
+            <h5 class="card-title">Student needs</h5>
+          </div>
+          <div class="card-body">
+            <canvas id="NeedsChart" width="400" height="100"></canvas>
+          </div>
+          <div class="card-footer">
+            <hr />
+            <div class="card-stats">
+              <i class="fa fa-check"></i> Data information certified
+            </div>
+          </div>
+        </div>
+      </div>
+      {%endif%}
+    
+      <div class="col-md-6">
+        <div class="card ">
+          <div class="card-header ">
+            <h5 class="card-title">Students Language</h5>
+          </div>
+          <div class="card-body ">
+            <canvas id="chartLanguage"></canvas>
+          </div>
+          <div class="card-footer ">
+            <div class="legend">
+              <i class="fa fa-circle text-primary"></i> French
+              <i class="fa fa-circle text-danger"></i> English
+            </div>
+            <hr>
+            <div class="stats">
+              <i class="fa fa-calendar"></i> Spoken languages at Esprit
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card ">
+          <div class="card-header ">
+            <h5 class="card-title">Level of Study</h5>
+          </div>
+          <div class="card-body ">
+            <canvas id="chartStudyLevel"></canvas>
+          </div>
+          <div class="card-footer ">
+            <div class="legend">
+              <i class="fa fa-circle text-primary"></i> Ing
+              <i class="fa fa-circle text-danger"></i> Bachelor
+              <i class="fa fa-circle text-gray"></i> Master
+            </div>
+            <hr>
+            <div class="stats">
+              <i class="fa fa-calendar"></i> Level of studies at Esprit
+            </div>
+          </div>
+        </div>
+    </div>
+  <div class="col-md-12">
+        <div class="card card-chart">
+          <div class="card-header">
+            <h5 class="card-title">How our alumni's are doing</h5>
+          </div>
+          <div class="card-body">
+            <canvas id="StatusChart" width="400" height="100"></canvas>
+          </div>
+          <div class="card-footer">
+            <hr />
+            <div class="card-stats">
+              <i class="fa fa-check"></i> Data information certified
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+  <script>
+    var nationalities = { {% for country, count in Nationality.items()%}
+      "{{country}}":{{count}},
+    {% endfor %} }
+    var gender = { {% for gender, count in Gender.items()%}
+      "{{gender}}":{{count}},
+    {% endfor %} }
+    var institution = { {% for institution, count in Institution.items()%}
+      "{{institution}}":{{count}},
+    {% endfor %} }
+    var needs = { {% for needs, count in Needs.items()%}
+      "{{needs}}":{{count}},
+    {% endfor %} }
+    var language = { {% for language, count in Language.items()%}
+      "{{language}}":{{count}},
+    {% endfor %} }
+     var LevelStudy = { {% for level, count in LevelStudy.items()%}
+      "{{level}}":{{count}},
+    {% endfor %} }
+     var statusC = { {% for status, count in Status.items()%}
+      "{{status}}":{{count}},
+    {% endfor %} }
+    $(document).ready(function() {
+      // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
+      demo.initChartsPages(nationalities,gender,institution,needs,language,LevelStudy,statusC);
+    });
+  </script>dataframe
+
+{% endblock javascripts %}

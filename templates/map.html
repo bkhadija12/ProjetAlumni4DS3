@@ -1,0 +1,42 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Google Maps {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <!-- End Navbar -->
+    <div class="content">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card ">
+            <div class="card-header ">
+              Google Maps
+            </div>
+            <div class="card-body ">
+              <div id="map" class="map"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}    
+
+  <!--  Google Maps Plugin    -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCG6HxRfnc8rDzeyWrsLFnfgWCspszgw3Y"></script>
+  <script>
+    var locations =[ {% for Location in Locations %}
+      [{{Location[0]}},{{Location[1]}}],
+    {% endfor %} ]
+    $(document).ready(function() {
+      demo.initGoogleMaps(locations);
+    });
+  </script>
+
+{% endblock javascripts %}

@@ -1,0 +1,12 @@
+ADMIN: 
+  symbol: 1
+  dependencies: []
+  editable: false
+STUDENT: 
+  symbol: 2
+  dependencies: []
+  editable: false
+ALUMNI: 
+  symbol: 3
+  dependencies: []
+  editable: false

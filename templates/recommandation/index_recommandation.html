@@ -1,0 +1,253 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+  
+ h2{
+   color:black
+ }
+.center {
+  margin: auto;
+  width: 90%;
+  border: 0px solid ;
+  padding: 100px;
+}
+.cente {
+  line-height: 200px;
+  height: 200px;
+  border: 3px solid rgb(255, 233, 233);
+  text-align: center;
+  font-size: 30px;
+}
+
+.cente p {
+  line-height: 1.5;
+  display: inline-block;
+  vertical-align: middle;
+}
+* {box-sizing: border-box}
+.mySlides1, .mySlides2 {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a grey background color */
+.prev:hover, .next:hover {
+  background-color: white;
+  color: black;
+}
+/* Fading animation */
+.fade {
+    line-height: 1.5;
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 6s;
+    animation-name: fade;
+    animation-duration: 6s;
+    display: inline-block;
+    vertical-align: middle;
+    background-color:transparent;
+    text-align: center;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+pr{
+  font-size: 40px;
+}
+
+brr {
+   display: block;
+   margin: 100px 0;
+}
+
+pp{
+  font-size: 30px;
+  color: black;
+
+}
+.hr{
+  color: black;
+  width: 100px;
+}
+</style>
+</head>
+<body>
+
+<div class="content">
+  <div align="center">
+  <div class="col-md-6 pr-3"">
+<div class="card card-user">
+  <div class="card-header">
+
+  <h5 class="card-title">Recommandation for you</h5>
+</div>
+  
+ <div class="col-md-12">
+  <div class="slideshow-container" data-cycle="4000">
+      {%for jobS in SkillRecommandation['jobTitle']%}
+        <div class="mySlides fade">
+          <div class="numbertext">{{loop.index}}/ {{SkillRecommandation | length}}</div>
+          <pp>based on your skills   <br>
+            {{jobS}}<br>
+          
+      </div>
+      {%endfor%}   
+
+  </div>
+</div>
+</div>
+<hr style="margin: 50px 0px"></hr>
+ 
+</div>
+   <div class="col-md-6 pr-3">
+<div class="card card-user">
+  <div class="card-header">
+
+  <h5 class="card-title">Recommandation  based on your location Location</h5>
+</div>
+  
+  <div class="slideshow-container" data-cycle="4000">
+      {%for job in JobRecommandation%}
+          <div class="mySlides fade">
+
+              <div class="numbertext"> <p>{{loop.index}}/ {{JobRecommandation | length}}</div>
+               <pp> Job In Your location  <br>
+              {{job[0]}}<br></pp>
+              
+          </div>
+        {%endfor%}
+  </div>
+</div>
+</div>
+</div>
+</div>
+<script>
+/* Find all slideshow containers */
+var slideshowContainers = document.getElementsByClassName("slideshow-container");
+/* For each container get starting variables */
+for(let s = 0; s < slideshowContainers.length; s++) {
+    /* Read the new data attribute */        
+    var cycle = slideshowContainers[s].dataset.cycle;
+    /* Find all the child nodes with class mySlides */
+    var slides = slideshowContainers[s].querySelectorAll('.mySlides');
+    var slideIndex = 0;
+    /* Now we can cycle slides, but this recursive function must have parameters */
+    /* slides and cycle never change, those are unique for each slide container */
+    /* slideIndex will increase during each iteration */
+    showSlides(slides, slideIndex, cycle);
+};
+
+/* Function is alsmost same, but now it uses 3 new parameters */
+function showSlides(slides, slideIndex, cycle) {
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    };
+    slideIndex++;
+    if (slideIndex > slides.length) {
+        slideIndex = 1
+    };
+    slides[slideIndex - 1].style.display = "block";
+    /* Calling same function, but with new parameters and cycle time */
+    setTimeout(function() {
+        showSlides(slides, slideIndex, cycle)
+    }, cycle);
+};
+
+</script>
+
+  <!-- Chart JS
+
+
+
+<div class="slideshow-container">
+  {%for i in SkillRecommandation %}
+    <div class="mySlides1">
+      <div class="cente">
+        {%for jobS in SkillRecommandation['jobTitle']%}
+        <p>Based on your skills  
+          Job : {{jobS}} <br>
+        {%endfor%}
+        {%for jobL in SkillRecommandation['jobLocation']%}
+          Location : {{jobL}}<br>
+        {%endfor%}
+        </p>
+      </div>  </div>
+    {%endfor%}
+
+ 
+
+  <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+</div>
+
+<h4>Trending Now:</h4>
+<div class="slideshow-container">
+  {%for job in JobRecommandation%}
+  <div class="mySlides2">
+    <div class="cente">
+      <p> Job In Your location : <br>
+        {{job[0]}}<br>
+      </p>    </div>  </div>
+      {%endfor%}
+
+    
+
+
+  <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+</div>
+</div>
+
+ -->
+
+</body>
+</html> 
+
+{% endblock content %}
+

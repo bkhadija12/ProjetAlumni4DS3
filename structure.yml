@@ -1,0 +1,169 @@
+dev_language: python
+entities:
+  event:
+    event:
+      apis:
+      - endpoints:
+        - {}
+        - {}
+        - {}
+        - {}
+        name: event_rest
+        type: rest
+      params: {}
+      storage:
+        target: projetds
+  job:
+    Job:
+      apis:
+      - endpoints:
+        - {}
+        - {}
+        - {}
+        - {}
+        name: job_rest
+        type: rest
+      params: {}
+      storage:
+        target: projetds
+  notification:
+    Notification:
+      apis:
+      - endpoints:
+        - {}
+        - {}
+        - {}
+        - {}
+        name: notification_rest
+        type: rest
+      params: {}
+      storage:
+        target: projetds
+  person:
+    Admin:
+      apis:
+      - endpoints:
+        - {}
+        - {}
+        - {}
+        - {}
+        name: admin_rest
+        type: rest
+      params: {}
+      storage:
+        target: projetds
+    Alumni:
+      apis:
+      - endpoints:
+        - {}
+        - {}
+        - {}
+        - {}
+        name: alumni_rest
+        type: rest
+      params: {}
+      storage:
+        target: projetds
+    Persontype:
+      apis: []
+      params: {}
+      storage:
+        target: projetds
+    Student:
+      apis:
+      - endpoints:
+        - {}
+        - {}
+        - {}
+        - {}
+        name: student_rest
+        type: rest
+      params: {}
+      storage:
+        target: projetds
+  recommandation:
+    Recommandation:
+      apis:
+      - endpoints:
+        - {}
+        - {}
+        - {}
+        - {}
+        name: recommandation_rest
+        type: rest
+      params: {}
+      storage:
+        target: projetds
+  skills:
+    Skills:
+      apis:
+      - endpoints:
+        - {}
+        - {}
+        - {}
+        - {}
+        name: skills_rest
+        type: rest
+      params: {}
+      storage:
+        target: projetds
+  user:
+    POPO:
+      apis: []
+      params: {}
+      storage:
+        target: null
+    User:
+      apis:
+      - endpoints:
+        - {}
+        - {}
+        - {}
+        - {}
+        name: user_rest
+        type: rest
+      params: {}
+      storage:
+        target: projetds
+    Userevent:
+      apis:
+      - endpoints:
+        - {}
+        - {}
+        - {}
+        - {}
+        name: userevent_rest
+        type: rest
+      params: {}
+      storage:
+        target: projetds
+    Userjob:
+      apis:
+      - endpoints:
+        - {}
+        - {}
+        - {}
+        - {}
+        name: userjob_rest
+        type: rest
+      params: {}
+      storage:
+        target: projetds
+    Userskills:
+      apis: []
+      params: {}
+      storage:
+        target: projetds
+joins: {}
+model: CRM
+storages:
+  implementation_mode: CONTEXT
+  types:
+    mysql:
+    - database: projetds
+      host: 127.0.0.1
+      name: projetds
+      password: 3Ounder3O$
+      port: '3306'
+      user: root
+version: 1.0

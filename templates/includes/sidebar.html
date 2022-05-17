@@ -1,0 +1,76 @@
+<div class="sidebar" data-color="white" data-active-color="danger">
+  
+    <div class="logo">
+      <a href="/" 
+         class="simple-text logo-normal">
+       <div class="image">
+          
+          <img src="/static/assets/img/Esprit_l (2).png">
+        </div>
+        <!-- <p>CT</p> -->
+      </a>
+      <a  href="/" class="simple-text logo-normal">
+         
+        <!-- <div class="logo-image-big">
+          <img src="/static/assets/img/logo-big.png">
+        </div> -->
+      </a>
+    </div>
+    
+    <div class="sidebar-wrapper">
+      
+      <ul class="nav">
+         {% if gardian.has_rights(current_user,['ADMIN','ALUMNI','STUDENT']) %}
+        <li class="{% if active_sidebar_item == 'dashboard' %}active{%endif%}">
+          <a href="/dashboard">
+            <i class="nc-icon nc-bank"></i>
+            <p>Dashboard</p>
+          </a>
+        </li>
+        {%endif%}
+        </li>
+        {% if gardian.has_rights(current_user,['ADMIN','ALUMNI','STUDENT']) %}
+        <li class="{% if active_sidebar_item == 'jobs' %}active{%endif%}">
+          <a href="/jobs">
+            <i class="nc-icon nc-badge"></i>
+            <p>Jobs <style></style></p>
+          </a>
+        </li>
+        {%endif%}
+         {% if gardian.has_rights(current_user,['ADMIN','ALUMNI','STUDENT']) %}
+
+        <li class="{% if active_sidebar_item == 'maps' %}active{%endif%}">
+          <a href="/maps">
+            <i class="nc-icon nc-pin-3"></i>
+            <p>Maps</p>
+          </a>
+        </li>
+        {%endif%}
+        {% if gardian.has_rights(current_user,['ADMIN','ALUMNI','STUDENT']) %}
+        <li class="{% if active_sidebar_item == 'jobmarket' %}active{%endif%}">
+          <a href="/market">
+            <i class="nc-icon nc-chart-bar-32"></i>
+            <p>Job Market</p>
+          </a>
+        </li> 
+        {%endif%}
+        {% if gardian.has_rights(current_user,['ADMIN','ALUMNI','STUDENT']) %}
+        <li class="{% if active_sidebar_item == 'events' %}active{%endif%}">
+          <a href="/events">
+            <i class="nc-icon nc-laptop"></i>
+            <p>Events & Webinars</p>
+          </a>
+        </li>
+        {%endif%}
+        {% if gardian.has_rights(current_user,['ALUMNI','STUDENT']) %}
+        <li class="{% if active_sidebar_item == 'Recommandation' %}active{%endif%}">
+          <a href="/recommandation">
+            <i class="nc-icon nc-share-66"></i>
+            <p>Recommandation</p>
+          </a>
+        </li>
+        {%endif%}
+       
+    </div>
+  </div>
+
